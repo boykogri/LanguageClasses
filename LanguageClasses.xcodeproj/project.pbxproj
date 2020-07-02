@@ -3,19 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A238161248D4FCD00E229C5 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A238160248D4FCD00E229C5 /* EditCard.swift */; };
+		3A5E679F248B4F05003A0836 /* TranslateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E679E248B4F05003A0836 /* TranslateCardViewController.swift */; };
+		3A5E67A1248B79D5003A0836 /* MainScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67A0248B79D5003A0836 /* MainScreenTableViewController.swift */; };
+		3A5E67A3248BCB77003A0836 /* TextsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67A2248BCB77003A0836 /* TextsViewController.swift */; };
+		3A5E67A6248BCC7F003A0836 /* TextsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67A5248BCC7F003A0836 /* TextsTableViewCell.swift */; };
+		3A5E67A8248BDE81003A0836 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67A7248BDE81003A0836 /* Text.swift */; };
+		3A5E67AA248CB233003A0836 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67A9248CB233003A0836 /* StorageManager.swift */; };
+		3A5E67AC248CB4AD003A0836 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67AB248CB4AD003A0836 /* Card.swift */; };
+		3A5E67AE248CBF80003A0836 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67AD248CBF7F003A0836 /* VocabularyViewController.swift */; };
+		3A5E67B1248CC0BE003A0836 /* VocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67B0248CC0BE003A0836 /* VocabularyCell.swift */; };
 		3A97A20424856DB700AD95E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97A20324856DB700AD95E0 /* AppDelegate.swift */; };
 		3A97A20624856DB700AD95E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97A20524856DB700AD95E0 /* SceneDelegate.swift */; };
 		3A97A20824856DB700AD95E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97A20724856DB700AD95E0 /* ViewController.swift */; };
 		3A97A20B24856DB700AD95E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A97A20924856DB700AD95E0 /* Main.storyboard */; };
 		3A97A20D24856DBA00AD95E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A97A20C24856DBA00AD95E0 /* Assets.xcassets */; };
 		3A97A21024856DBA00AD95E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A97A20E24856DBA00AD95E0 /* LaunchScreen.storyboard */; };
+		E5859E70EC61CF3F18B10432 /* Pods_LanguageClasses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217633F48B78F8F7FE64E837 /* Pods_LanguageClasses.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		217633F48B78F8F7FE64E837 /* Pods_LanguageClasses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LanguageClasses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A238160248D4FCD00E229C5 /* EditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
+		3A5E679E248B4F05003A0836 /* TranslateCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateCardViewController.swift; sourceTree = "<group>"; };
+		3A5E67A0248B79D5003A0836 /* MainScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewController.swift; sourceTree = "<group>"; };
+		3A5E67A2248BCB77003A0836 /* TextsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsViewController.swift; sourceTree = "<group>"; };
+		3A5E67A5248BCC7F003A0836 /* TextsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsTableViewCell.swift; sourceTree = "<group>"; };
+		3A5E67A7248BDE81003A0836 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		3A5E67A9248CB233003A0836 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		3A5E67AB248CB4AD003A0836 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3A5E67AD248CBF7F003A0836 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
+		3A5E67B0248CC0BE003A0836 /* VocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyCell.swift; sourceTree = "<group>"; };
 		3A97A20024856DB700AD95E0 /* LanguageClasses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageClasses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A97A20324856DB700AD95E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A97A20524856DB700AD95E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +46,8 @@
 		3A97A20C24856DBA00AD95E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A97A20F24856DBA00AD95E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A97A21124856DBA00AD95E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		643508E8858E4F234525B6D4 /* Pods-LanguageClasses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageClasses.release.xcconfig"; path = "Target Support Files/Pods-LanguageClasses/Pods-LanguageClasses.release.xcconfig"; sourceTree = "<group>"; };
+		F1CB2E2C3256481FB1C2002D /* Pods-LanguageClasses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageClasses.debug.xcconfig"; path = "Target Support Files/Pods-LanguageClasses/Pods-LanguageClasses.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +55,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5859E70EC61CF3F18B10432 /* Pods_LanguageClasses.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03DEF747B078FC9644695040 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1CB2E2C3256481FB1C2002D /* Pods-LanguageClasses.debug.xcconfig */,
+				643508E8858E4F234525B6D4 /* Pods-LanguageClasses.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		0F798E996E6AA7655FDA7E54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				217633F48B78F8F7FE64E837 /* Pods_LanguageClasses.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A5E67A4248BCC57003A0836 /* Texts */ = {
+			isa = PBXGroup;
+			children = (
+				3A97A20724856DB700AD95E0 /* ViewController.swift */,
+				3A5E67A2248BCB77003A0836 /* TextsViewController.swift */,
+				3A5E67A5248BCC7F003A0836 /* TextsTableViewCell.swift */,
+				3A5E67A7248BDE81003A0836 /* Text.swift */,
+			);
+			path = Texts;
+			sourceTree = "<group>";
+		};
+		3A5E67AF248CC08B003A0836 /* Vocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				3A5E67AD248CBF7F003A0836 /* VocabularyViewController.swift */,
+				3A5E67B0248CC0BE003A0836 /* VocabularyCell.swift */,
+				3A238160248D4FCD00E229C5 /* EditCard.swift */,
+			);
+			path = Vocabulary;
+			sourceTree = "<group>";
+		};
 		3A97A1F724856DB700AD95E0 = {
 			isa = PBXGroup;
 			children = (
 				3A97A20224856DB700AD95E0 /* LanguageClasses */,
 				3A97A20124856DB700AD95E0 /* Products */,
+				03DEF747B078FC9644695040 /* Pods */,
+				0F798E996E6AA7655FDA7E54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +121,18 @@
 		3A97A20224856DB700AD95E0 /* LanguageClasses */ = {
 			isa = PBXGroup;
 			children = (
+				3A5E67AF248CC08B003A0836 /* Vocabulary */,
 				3A97A20324856DB700AD95E0 /* AppDelegate.swift */,
 				3A97A20524856DB700AD95E0 /* SceneDelegate.swift */,
-				3A97A20724856DB700AD95E0 /* ViewController.swift */,
 				3A97A20924856DB700AD95E0 /* Main.storyboard */,
+				3A5E67AB248CB4AD003A0836 /* Card.swift */,
+				3A5E67A4248BCC57003A0836 /* Texts */,
 				3A97A20C24856DBA00AD95E0 /* Assets.xcassets */,
 				3A97A20E24856DBA00AD95E0 /* LaunchScreen.storyboard */,
 				3A97A21124856DBA00AD95E0 /* Info.plist */,
+				3A5E679E248B4F05003A0836 /* TranslateCardViewController.swift */,
+				3A5E67A0248B79D5003A0836 /* MainScreenTableViewController.swift */,
+				3A5E67A9248CB233003A0836 /* StorageManager.swift */,
 			);
 			path = LanguageClasses;
 			sourceTree = "<group>";
@@ -74,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A97A21424856DBA00AD95E0 /* Build configuration list for PBXNativeTarget "LanguageClasses" */;
 			buildPhases = (
+				2AF9536C8C08BBEA4FBD9D4B /* [CP] Check Pods Manifest.lock */,
 				3A97A1FC24856DB700AD95E0 /* Sources */,
 				3A97A1FD24856DB700AD95E0 /* Frameworks */,
 				3A97A1FE24856DB700AD95E0 /* Resources */,
+				EB34A748CC068B0F85A147F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +205,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2AF9536C8C08BBEA4FBD9D4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LanguageClasses-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB34A748CC068B0F85A147F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LanguageClasses/Pods-LanguageClasses-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LanguageClasses/Pods-LanguageClasses-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LanguageClasses/Pods-LanguageClasses-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A97A1FC24856DB700AD95E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3A97A20824856DB700AD95E0 /* ViewController.swift in Sources */,
+				3A5E67A6248BCC7F003A0836 /* TextsTableViewCell.swift in Sources */,
+				3A5E67A8248BDE81003A0836 /* Text.swift in Sources */,
+				3A5E67AE248CBF80003A0836 /* VocabularyViewController.swift in Sources */,
+				3A5E67AA248CB233003A0836 /* StorageManager.swift in Sources */,
+				3A5E67A1248B79D5003A0836 /* MainScreenTableViewController.swift in Sources */,
+				3A5E679F248B4F05003A0836 /* TranslateCardViewController.swift in Sources */,
+				3A238161248D4FCD00E229C5 /* EditCard.swift in Sources */,
+				3A5E67B1248CC0BE003A0836 /* VocabularyCell.swift in Sources */,
+				3A5E67A3248BCB77003A0836 /* TextsViewController.swift in Sources */,
+				3A5E67AC248CB4AD003A0836 /* Card.swift in Sources */,
 				3A97A20424856DB700AD95E0 /* AppDelegate.swift in Sources */,
 				3A97A20624856DB700AD95E0 /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +406,7 @@
 		};
 		3A97A21524856DBA00AD95E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1CB2E2C3256481FB1C2002D /* Pods-LanguageClasses.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,7 +416,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = boiko.gri.LanguageClasses;
+				PRODUCT_BUNDLE_IDENTIFIER = LanguageClasses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,6 +425,7 @@
 		};
 		3A97A21624856DBA00AD95E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 643508E8858E4F234525B6D4 /* Pods-LanguageClasses.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,7 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = boiko.gri.LanguageClasses;
+				PRODUCT_BUNDLE_IDENTIFIER = LanguageClasses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
