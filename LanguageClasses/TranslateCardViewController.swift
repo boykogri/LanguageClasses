@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class TranslateCardViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var translateTV: UITextView!
@@ -16,11 +16,20 @@ class TranslateCardViewController: UIViewController, UIGestureRecognizerDelegate
     @IBOutlet weak var wordTF: UITextField!
     @IBOutlet weak var addButton: UIButton!
     var translate: NSMutableAttributedString!
-    var key: String!
+    var word: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        translateTV.attributedText = translate
-        wordTF.text = key
+        
+        DispatchQueue.global(qos: .background).async {
+            print("Запрос пошел")
+            self.getResponse()
+            DispatchQueue.main.async {
+                print("Меняю значения")
+                self.translateTV.attributedText = self.translate
+            }
+        }
+        self.wordTF.text = self.word
+        
         addButton.isEnabled = false
         //Добавляем слушателя
         translateTF.addTarget(self, action: #selector(textFieldChange), for: .editingChanged)
@@ -32,7 +41,7 @@ class TranslateCardViewController: UIViewController, UIGestureRecognizerDelegate
         
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func addWord(_ sender: Any) {
         StorageManager.saveObject(Card(wordTF.text!, translateTF.text!))
     }
@@ -57,7 +66,87 @@ class TranslateCardViewController: UIViewController, UIGestureRecognizerDelegate
         }
         
     }
+    func getResponse(){
+        let url = "https://developers.lingvolive.com/api/v1/Translation"
+        let parameters: [String: Any] = [
+            "text": word!,
+            "srcLang": 1033,
+            "dstLang": 1049
+        ]
+        
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(ViewController.token)",
+            //"Accept": "application/json"
+        ]
+
+        AF.request(url, method: .get, parameters: parameters, headers: headers).validate().responseJSON { responseJSON in
+            self.translate = NSMutableAttributedString()
+            switch responseJSON.result {
+            case .success(let value):
+                //Разбираемся с body JSON ответа
+                if let arr = value as? [ [String : Any] ]{
+                    for obj in arr {
+                        if obj["Dictionary"] as? String == "LingvoUniversal (En-Ru)" {
+                            if let arr1 = obj["Body"] as? [ [String : Any] ] {
+                                self.getTranslate(for: arr1)
+                            }
+                        }
+                        
+                    }
+                }
+                print("Выполнил перевод")
+                self.translateTV.attributedText = self.translate
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
     
+    //Получаем перевод
+    func getTranslate(for value: Any, node: [String] = ["List"]){
+        if let arr = value as? [ [String : Any] ]{
+            for obj in arr {
+                if let nodeObject = obj["Node"] as? String {
+                    //Если пошли синонимы, то прерываемся
+                    if nodeObject == "CardRef" {break}
+                    if node.contains(nodeObject){
+                        switch nodeObject {
+                        case "List":
+                            //print("1.", separator: "", terminator: " ")
+                            getTranslate(for: obj["Items"]!, node: ["ListItem"])
+                        case "ListItem":
+                            getTranslate(for: obj["Markup"]!, node: ["Paragraph"])
+                            getTranslate(for: obj["Markup"]!, node: ["List"])
+                        case "Paragraph":
+                            getTranslate(for: obj["Markup"]!, node: ["Abbrev", "Text"])
+                        case "Abbrev":
+                            var temp = obj["Text"] as! String
+                            temp += " "
+                            let s = NSMutableAttributedString().bold(temp)
+                            translate.append(s)
+                        case "Text":
+                            var temp = obj["Text"] as! String
+                            temp += " "
+                            let s = NSMutableAttributedString().normal(temp)
+                            translate.append(s)
+                        default:
+                            return
+                        }
+                    }
+                    
+                }
+                
+                
+            }
+            //Чтоб исключить множество переносов строки
+            if (translate.string != "") && translate.string.last! != "\n"{
+                translate.append(NSMutableAttributedString(string: "\n"))
+            }
+        }
+        
+    }
         
 }
 // Mark: — Text Field Delegate

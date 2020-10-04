@@ -1,49 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZnQ-Rg-Q6i">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dNH-Ca-clX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="o2B-3O-1wW">
-            <objects>
-                <navigationController id="ZnQ-Rg-Q6i" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oWe-a6-z8L">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="xfR-Eq-Iff" kind="relationship" relationship="rootViewController" id="Aig-gV-OzZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4gl-4Z-QrE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2299" y="-200"/>
-        </scene>
         <!--Texts View Controller-->
         <scene sceneID="Vtd-Go-5kR">
             <objects>
                 <viewController id="3zk-xg-4D1" customClass="TextsViewController" customModule="LanguageClasses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q2u-VN-4DQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IgN-Dn-XtE">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="QZn-zD-6fc" customClass="TextsTableViewCell" customModule="LanguageClasses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZn-zD-6fc" id="M2P-iH-4gx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzg-nl-yig">
-                                                    <rect key="frame" x="16" y="11.5" width="382" height="21"/>
+                                                    <rect key="frame" x="16" y="11.5" width="343" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -84,25 +68,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixw-71-m42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-393" y="104"/>
+            <point key="canvasLocation" x="1484" y="103.89805097451276"/>
         </scene>
-        <!--Vocabulary View Controller-->
+        <!--Словарь-->
         <scene sceneID="Qj5-7N-EDn">
             <objects>
                 <viewController id="seq-XJ-qO1" customClass="VocabularyViewController" customModule="LanguageClasses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xDw-WS-AB6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-QL-egU">
-                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="2UO-vU-a9H" customClass="VocabularyCell" customModule="LanguageClasses" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2UO-vU-a9H" id="Qkd-iG-l1g">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Translate" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-cM-K1z">
@@ -134,7 +118,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jZQ-3a-WZm">
-                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="32"/>
                                 <segments>
                                     <segment title="Дата"/>
                                     <segment title="Имя"/>
@@ -156,7 +140,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dW4-tm-8P9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BJl-Y4-fxN">
+                    <navigationItem key="navigationItem" title="Словарь" id="BJl-Y4-fxN">
                         <rightBarButtonItems>
                             <barButtonItem style="done" systemItem="add" id="ThE-MD-opU">
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -180,34 +164,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCu-V1-Te3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394.20289855072468" y="-641.51785714285711"/>
+            <point key="canvasLocation" x="1484" y="-641.82908545727139"/>
         </scene>
         <!--Добавить слово-->
         <scene sceneID="ec4-B0-Cko">
             <objects>
                 <viewController id="Yj0-H6-HD6" customClass="EditCard" customModule="LanguageClasses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fIN-3H-12y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Слово" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4nh-uk-U2P">
-                                <rect key="frame" x="20" y="279" width="374" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="23"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Перевод" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWP-aZ-6cc">
-                                <rect key="frame" x="20" y="333" width="374" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="23"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6QT-hf-PuV">
+                                <rect key="frame" x="20" y="284.5" width="335" height="93"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Слово" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4nh-uk-U2P">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="37.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Перевод" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWP-aZ-6cc">
+                                        <rect key="frame" x="0.0" y="55.5" width="335" height="37.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbS-Pg-Ord">
-                                <rect key="frame" x="88" y="733" width="238" height="62"/>
+                                <rect key="frame" x="68.5" y="496" width="238" height="55"/>
                                 <color key="backgroundColor" red="0.55416029690000002" green="0.87879741190000005" blue="0.66024559739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="238" id="9c8-Dc-IGo"/>
-                                    <constraint firstAttribute="height" constant="62" id="Ebu-OX-Rdw"/>
+                                    <constraint firstAttribute="width" secondItem="mbS-Pg-Ord" secondAttribute="height" multiplier="238:55" id="mjd-VA-IeT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
                                 <state key="normal" title="Добавить в словарь"/>
@@ -220,7 +207,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mbS-Pg-Ord" firstAttribute="centerX" secondItem="Fal-G5-CIM" secondAttribute="centerX" id="6ee-iG-2Et"/>
+                            <constraint firstItem="Fal-G5-CIM" firstAttribute="trailing" secondItem="6QT-hf-PuV" secondAttribute="trailing" constant="20" id="Gkf-aJ-7LX"/>
+                            <constraint firstItem="6QT-hf-PuV" firstAttribute="centerY" secondItem="Fal-G5-CIM" secondAttribute="centerY" id="QAq-vz-FMj"/>
                             <constraint firstItem="Fal-G5-CIM" firstAttribute="bottom" secondItem="mbS-Pg-Ord" secondAttribute="bottom" constant="67" id="QHY-wm-mzD"/>
+                            <constraint firstItem="6QT-hf-PuV" firstAttribute="leading" secondItem="Fal-G5-CIM" secondAttribute="leading" constant="20" id="a1w-GL-4Vh"/>
+                            <constraint firstItem="6QT-hf-PuV" firstAttribute="centerX" secondItem="Fal-G5-CIM" secondAttribute="centerX" id="qvt-HM-3us"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fal-G5-CIM"/>
                     </view>
@@ -234,83 +225,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbu-0A-wd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wbF-Ny-pAE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="365.21739130434787" y="-643.52678571428567"/>
+            <point key="canvasLocation" x="2242.4000000000001" y="-643.62818590704649"/>
         </scene>
-        <!--LanguageClasses-->
-        <scene sceneID="VCJ-Iq-IT9">
+        <!--Статьи-->
+        <scene sceneID="mOv-ct-46X">
             <objects>
-                <tableViewController id="xfR-Eq-Iff" customClass="MainScreenTableViewController" customModule="LanguageClasses" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ad9-JZ-fEL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="n9H-xv-Zmv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WQk-zJ-4ol">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <sections>
-                            <tableViewSection id="5b7-QM-RsR">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="nVB-4v-11N" style="IBUITableViewCellStyleDefault" id="56j-rV-etQ">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="56j-rV-etQ" id="Mhf-aH-IMh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Словарь" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nVB-4v-11N">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="seq-XJ-qO1" kind="show" id="wsG-ha-YR8"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="a8v-HJ-bMf" style="IBUITableViewCellStyleDefault" id="El8-lC-O0l">
-                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="El8-lC-O0l" id="N8t-41-hYN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Статьи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a8v-HJ-bMf">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="3zk-xg-4D1" kind="show" id="3LA-zz-8Gn"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="xfR-Eq-Iff" id="VNT-6c-yco"/>
-                            <outlet property="delegate" destination="xfR-Eq-Iff" id="JQH-w5-BXP"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="LanguageClasses" id="lca-27-FON"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5N6-ih-fJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="Yb8-5f-bpz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Статьи" image="doc.plaintext" catalog="system" selectedImage="doc.plaintext" id="6jh-qm-C3J"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lt-5K-RFu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1467" y="-200"/>
+            <point key="canvasLocation" x="-2275" y="-911"/>
+        </scene>
+        <!--Словарь-->
+        <scene sceneID="zN4-67-gB8">
+            <objects>
+                <viewController id="0Gg-BF-ZMF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="69O-HL-9N6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NB4-gH-8U3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Словарь" image="cube.box" catalog="system" selectedImage="cube.box" id="yMa-WM-t36"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9TX-09-6R7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2275" y="-1575"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="u3j-nh-2ob">
+            <objects>
+                <tabBarController id="UWg-0M-pgg" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zpq-bU-RNL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0Gg-BF-ZMF" kind="relationship" relationship="viewControllers" id="2DR-AO-4lm"/>
+                        <segue destination="n9H-xv-Zmv" kind="relationship" relationship="viewControllers" id="yBV-dy-e1F"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QHK-X6-iku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3228" y="-1243"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LanguageClasses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" " translatesAutoresizingMaskIntoConstraints="NO" id="5rQ-Xz-kIl">
-                                <rect key="frame" x="20" y="88" width="374" height="744"/>
+                                <rect key="frame" x="20" y="44" width="335" height="574"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -320,7 +296,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5rQ-Xz-kIl" secondAttribute="trailing" constant="20" id="MET-0o-uX7"/>
                             <constraint firstItem="5rQ-Xz-kIl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tdh-oH-7lx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5rQ-Xz-kIl" secondAttribute="bottom" constant="30" id="lQx-Oz-C1w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5rQ-Xz-kIl" secondAttribute="bottom" id="lQx-Oz-C1w"/>
                             <constraint firstItem="5rQ-Xz-kIl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xFW-yJ-rc8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -328,40 +304,39 @@
                     <navigationItem key="navigationItem" id="QZ1-29-IJ4"/>
                     <connections>
                         <outlet property="textView" destination="5rQ-Xz-kIl" id="ncL-cF-kbw"/>
-                        <segue destination="FFC-Z8-JCk" kind="showDetail" identifier="translateSegue" id="V7g-5a-rFZ"/>
+                        <segue destination="FFC-Z8-JCk" kind="presentation" identifier="translateSegue" id="V7g-5a-rFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="104"/>
+            <point key="canvasLocation" x="2311.1999999999998" y="103.89805097451276"/>
         </scene>
         <!--Translate Card View Controller-->
         <scene sceneID="rru-Zn-oKA">
             <objects>
                 <viewController id="FFC-Z8-JCk" customClass="TranslateCardViewController" customModule="LanguageClasses" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wmE-dA-rHL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите текущий перевод" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-aB-OnF">
-                                <rect key="frame" x="20" y="705" width="374" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите текущий перевод" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="SSQ-aB-OnF">
+                                <rect key="frame" x="20" y="539.5" width="335" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8K-Bq-Q8c">
-                                <rect key="frame" x="20" y="124" width="374" height="573"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8K-Bq-Q8c">
+                                <rect key="frame" x="20" y="110.5" width="335" height="421"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2o-l5-xUG">
-                                <rect key="frame" x="20" y="750" width="374" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2o-l5-xUG">
+                                <rect key="frame" x="20" y="586" width="335" height="45"/>
                                 <color key="backgroundColor" red="0.55416029690000002" green="0.87879741190000005" blue="0.66024559739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="a2o-l5-xUG" secondAttribute="height" multiplier="187:25" id="7Jx-Sr-ho5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Добавить в словарь"/>
                                 <connections>
@@ -369,21 +344,40 @@
                                     <segue destination="sAT-c0-fSp" kind="unwind" unwindAction="unwindSegue:" id="q2X-M3-Eu7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Перевод" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LS7-Mh-wRJ">
-                                <rect key="frame" x="20" y="9" width="374" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Перевод" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LS7-Mh-wRJ">
+                                <rect key="frame" x="20" y="8" width="335" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="BDq-tp-YTF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Слово" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-Wl-OeS">
-                                <rect key="frame" x="20" y="65" width="374" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Слово" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-Wl-OeS">
+                                <rect key="frame" x="20" y="65" width="335" height="37.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gbd-Wl-OeS" firstAttribute="leading" secondItem="wSy-oi-p22" secondAttribute="leading" constant="20" id="5B6-Fu-oot"/>
+                            <constraint firstItem="wSy-oi-p22" firstAttribute="bottom" secondItem="a2o-l5-xUG" secondAttribute="bottom" constant="16" id="7NG-dK-4Sg"/>
+                            <constraint firstItem="a2o-l5-xUG" firstAttribute="leading" secondItem="wSy-oi-p22" secondAttribute="leading" constant="20" id="BlT-t9-EKi"/>
+                            <constraint firstItem="wSy-oi-p22" firstAttribute="trailing" secondItem="a2o-l5-xUG" secondAttribute="trailing" constant="20" id="D17-hR-f1h"/>
+                            <constraint firstItem="a2o-l5-xUG" firstAttribute="top" secondItem="SSQ-aB-OnF" secondAttribute="bottom" constant="8" id="Fb6-z6-0ui"/>
+                            <constraint firstItem="wSy-oi-p22" firstAttribute="trailing" secondItem="e8K-Bq-Q8c" secondAttribute="trailing" constant="20" id="PGO-iR-eT9"/>
+                            <constraint firstItem="e8K-Bq-Q8c" firstAttribute="leading" secondItem="wSy-oi-p22" secondAttribute="leading" constant="20" id="TA9-yu-cx0"/>
+                            <constraint firstItem="e8K-Bq-Q8c" firstAttribute="top" secondItem="gbd-Wl-OeS" secondAttribute="bottom" constant="8" id="TQD-Oa-iHI"/>
+                            <constraint firstItem="SSQ-aB-OnF" firstAttribute="top" secondItem="e8K-Bq-Q8c" secondAttribute="bottom" constant="8" id="VMx-pF-z2K"/>
+                            <constraint firstItem="wSy-oi-p22" firstAttribute="trailing" secondItem="LS7-Mh-wRJ" secondAttribute="trailing" constant="20" id="YpW-GO-dxi"/>
+                            <constraint firstItem="wSy-oi-p22" firstAttribute="trailing" secondItem="gbd-Wl-OeS" secondAttribute="trailing" constant="20" id="h2h-Yg-3iD"/>
+                            <constraint firstItem="SSQ-aB-OnF" firstAttribute="leading" secondItem="wSy-oi-p22" secondAttribute="leading" constant="20" id="ii2-U8-DjZ"/>
+                            <constraint firstItem="LS7-Mh-wRJ" firstAttribute="top" secondItem="wSy-oi-p22" secondAttribute="top" constant="8" id="jAO-VM-1UJ"/>
+                            <constraint firstItem="gbd-Wl-OeS" firstAttribute="top" secondItem="LS7-Mh-wRJ" secondAttribute="bottom" constant="8" id="m2V-wJ-bJh"/>
+                            <constraint firstItem="wSy-oi-p22" firstAttribute="trailing" secondItem="SSQ-aB-OnF" secondAttribute="trailing" constant="20" id="so3-O4-hdu"/>
+                            <constraint firstItem="LS7-Mh-wRJ" firstAttribute="leading" secondItem="wSy-oi-p22" secondAttribute="leading" constant="20" id="y0r-Yr-BDY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wSy-oi-p22"/>
                     </view>
                     <connections>
@@ -396,13 +390,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vk-H6-PkP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="sAT-c0-fSp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1124.6376811594205" y="103.79464285714285"/>
+            <point key="canvasLocation" x="3079" y="104"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="S2Y-Ux-z5N">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dNH-Ca-clX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k2h-AE-x12">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QIt-Kb-xuX" kind="relationship" relationship="viewControllers" id="92Z-wv-FhM"/>
+                        <segue destination="9KN-0o-k5f" kind="relationship" relationship="viewControllers" id="kHy-UY-uQK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoC-aO-Gza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-470" y="-215"/>
+        </scene>
+        <!--Словарь-->
+        <scene sceneID="g4k-Ky-VfU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QIt-Kb-xuX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Словарь" image="cube.box" catalog="system" id="hgG-xx-rso"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GrQ-ne-kqa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="seq-XJ-qO1" kind="relationship" relationship="rootViewController" id="9pa-QA-Dw4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oDu-Zm-OlR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544.79999999999995" y="-641.82908545727139"/>
+        </scene>
+        <!--Статьи-->
+        <scene sceneID="Qyu-RO-aqH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9KN-0o-k5f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Статьи" image="doc.plaintext" catalog="system" id="bjr-MZ-YH7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8TU-VS-Q73">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3zk-xg-4D1" kind="relationship" relationship="rootViewController" id="DO3-ET-B1m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6c-i4-XNN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544.79999999999995" y="103.89805097451276"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="AZ" width="25" height="24"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aWp-iS-4ew"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="AZ" width="25" height="24"/>
+        <image name="cube.box" catalog="system" width="128" height="124"/>
+        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
+    </resources>
 </document>

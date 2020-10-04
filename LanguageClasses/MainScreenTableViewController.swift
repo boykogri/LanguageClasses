@@ -11,12 +11,13 @@ import RealmSwift
 
 class MainScreenTableViewController: UITableViewController {
     
-    //var texts: Results<Card>!
+    var texts: Results<Card>!
     override func viewDidLoad() {
         super.viewDidLoad()
         //Убираем полоски внизу
         tableView.tableFooterView = UIView()
         setupNavigationBar()
+
     }
     
     private func setupNavigationBar(){
