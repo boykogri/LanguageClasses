@@ -8,46 +8,159 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
 
-class TextsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TextsViewController: UIViewController, UITableViewDelegate {
     
-
+    
     @IBOutlet weak var tableView: UITableView!
     var texts: Results<Text>!
+
+    var items = [RSSItem]()
+    let url = "http://feeds.bbci.co.uk/news/technology/rss.xml"
+    let parameters: [String: String] = [
+        "yandexPassportOauthToken": ""
+    ]
+    public static var token: String = ""
+    var html: NSAttributedString!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         //Получаем все тексты
         texts = realm.objects(Text.self)
+        self.view.setActivityIndicator()
+        self.view.activityStartAnimating()
+        
+        DispatchQueue.global().async {
+            self.fetchNews()
+        }
         
         
         //Убираем полоски внизу
         tableView.tableFooterView = UIView()
         
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return texts.isEmpty ? 0 : texts.count
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TextsTableViewCell
-        cell.titleLabel.text = texts[indexPath.row].title
-        return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "textSegue" {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let dvc = segue.destination as! ViewController
-            dvc.article = texts[indexPath.row]
+        AF.request("https://iam.api.cloud.yandex.net/iam/v1/tokens",
+                   method: .post,
+                   parameters: parameters,
+                   encoder: JSONParameterEncoder.prettyPrinted).validate().responseDecodable(of: Token.self)
+                   { response in
+                    switch response.result {
+                    case .success:
+                        guard let value = response.value else { debugPrint(response); return }
+                        TextsViewController.token = value.iamToken
+                        print("token = \(value.iamToken)")
+                        
+                    case let .failure(error):
+                        print(error)
+                        
+                    }
         }
         
     }
     
+    
+    
+    private func fetchNews(){
+        
+        let rssParser = RSSParser()
+        if let url = URL(string: url){
+            rssParser.startParsingWithContentsOfURL(rssUrl: url) {(isSuccessful) in
+                if isSuccessful {
+                    print("Успешно распарсили")
+                    items = rssParser.rssItems
+                    DispatchQueue.main.async {
+                        self.view.activityStopAnimating()
+                        self.tableView.reloadData()
+                    }
+                }else {
+                    
+                    DispatchQueue.main.async {
+                        self.view.activityStopAnimating()
+                        self.setUIWithInternetProblem()
+                    }
+                    print("Не удалось распарсить")
+                }
+
+            }
+            
+        }
+        
+        
+        //        let session = URLSession.shared
+        //        guard let url = URL(string: url) else { return }
+        //        session.dataTask(with: url) { (data, response, error) in
+        //            if let error = error {
+        //                print(error.localizedDescription)
+        //            }
+        //            if let response = response{
+        //                print(response)
+        //            }
+        //            if let data = data{
+        //
+        //                print(String(data: data, encoding: .utf8)!)
+        //            }
+        //        }.resume()
+    }
+    private func setUIWithInternetProblem(){
+        let internetErrorLabel = UILabel()
+        internetErrorLabel.text = """
+        Не удалость получить новости :(
+        Проверьте соединение с интернетом
+        """
+        internetErrorLabel.numberOfLines = 0
+        internetErrorLabel.sizeToFit()
+        internetErrorLabel.backgroundColor = .red
+        
+        let button = UIButton()
+        button.setTitle("Попробовать еще раз", for: .normal)
+        button.backgroundColor = .gray
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(self.pressedButton), for: .touchUpInside)
+        
+
+        let stackView = UIStackView(arrangedSubviews: [internetErrorLabel, button])
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 10
+        stackView.tag = 525
+        
+        self.view.addSubview(stackView)
+        // autolayout constraint
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
+    }
+    @objc func pressedButton(){
+        if let stackView = self.view.viewWithTag(525){
+            DispatchQueue.global().async {
+                DispatchQueue.main.async {
+                    stackView.removeFromSuperview()
+                    self.view.activityStartAnimating()
+                }
+                self.fetchNews()
+            }
+        }
+    }
+    
+    //    private func fetchHtmlPage(){
+    //
+    //        let session = URLSession.shared
+    //        guard let url = URL(string: url) else { return }
+    //        session.dataTask(with: url) { (data, response, error) in
+    //            if let error = error {
+    //                print(error.localizedDescription)
+    //            }
+    //            if let response = response{
+    //                print(response)
+    //            }
+    //            if let data = data{
+    //                self.html = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+    //                print(self.html)
+    //            }
+    //        }.resume()
+    //    }
     private func setupNavigationBar(){
         //Настраиваем кнопку назад
         if let topItem = navigationController?.navigationBar.topItem{
@@ -60,14 +173,37 @@ class TextsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "textSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            tableView.deselectRow(at: indexPath, animated: true)
+            let dvc = segue.destination as! TextViewController
+            //dvc.article = texts[indexPath.row]
+            dvc.newItem = items[indexPath.row]
+            dvc.tokenYa = TextsViewController.token
+        }
+        
+    }
+    
+    
+}
+//MARK: - UITableViewDataSource
+extension TextsViewController: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.isEmpty ? 0 : items.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TextsTableViewCell
+        cell.titleLabel.text = items[indexPath.row].title
+        cell.pubDateLabel.text = items[indexPath.row].pubDate
+        return cell
+    }
 }

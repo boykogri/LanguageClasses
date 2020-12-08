@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-//Сама базза данных
+//Сама базы данных
 let realm = try! Realm()
 
 class StorageManager {

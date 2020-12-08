@@ -17,4 +17,5 @@ class Card: Object{
         self.word = word
         self.translate = translate
     }
+    
 }

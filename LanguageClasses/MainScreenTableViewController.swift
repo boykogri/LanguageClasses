@@ -17,7 +17,7 @@ class MainScreenTableViewController: UITableViewController {
         //Убираем полоски внизу
         tableView.tableFooterView = UIView()
         setupNavigationBar()
-
+        
     }
     
     private func setupNavigationBar(){
@@ -26,7 +26,7 @@ class MainScreenTableViewController: UITableViewController {
         appearance.backgroundColor = #colorLiteral(red: 0.2190827583, green: 0.5534923909, blue: 0.833327566, alpha: 1)
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-       
+        
     }
     // MARK: - Table view data source
     
