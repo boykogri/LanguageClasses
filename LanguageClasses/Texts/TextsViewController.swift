@@ -15,7 +15,7 @@ class TextsViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var texts: Results<Text>!
-
+    
     var items = [RSSItem]()
     let url = "http://feeds.bbci.co.uk/news/technology/rss.xml"
     let parameters: [String: String] = [
@@ -33,33 +33,19 @@ class TextsViewController: UIViewController, UITableViewDelegate {
         
         DispatchQueue.global().async {
             self.fetchNews()
+            self.getToken()
         }
         
         
         //Убираем полоски внизу
         tableView.tableFooterView = UIView()
         
-        AF.request("https://iam.api.cloud.yandex.net/iam/v1/tokens",
-                   method: .post,
-                   parameters: parameters,
-                   encoder: JSONParameterEncoder.prettyPrinted).validate().responseDecodable(of: Token.self)
-                   { response in
-                    switch response.result {
-                    case .success:
-                        guard let value = response.value else { debugPrint(response); return }
-                        TextsViewController.token = value.iamToken
-                        print("token = \(value.iamToken)")
-                        
-                    case let .failure(error):
-                        print(error)
-                        
-                    }
-        }
+
         
     }
     
     
-    
+    //MARK: - Work with Internet
     private func fetchNews(){
         
         let rssParser = RSSParser()
@@ -80,27 +66,41 @@ class TextsViewController: UIViewController, UITableViewDelegate {
                     }
                     print("Не удалось распарсить")
                 }
-
+                
             }
             
         }
         
-        
-        //        let session = URLSession.shared
-        //        guard let url = URL(string: url) else { return }
-        //        session.dataTask(with: url) { (data, response, error) in
-        //            if let error = error {
-        //                print(error.localizedDescription)
-        //            }
-        //            if let response = response{
-        //                print(response)
-        //            }
-        //            if let data = data{
-        //
-        //                print(String(data: data, encoding: .utf8)!)
-        //            }
-        //        }.resume()
     }
+    func getToken(){
+        AF.request("https://iam.api.cloud.yandex.net/iam/v1/tokens",
+                   method: .post,
+                   parameters: parameters,
+                   encoder: JSONParameterEncoder.prettyPrinted).validate().responseDecodable(of: Token.self)
+                   { response in
+                    switch response.result {
+                    case .success:
+                        guard let value = response.value else { debugPrint(response); return }
+                        TextsViewController.token = value.iamToken
+                        print("token = \(value.iamToken)")
+                        
+                    case let .failure(error):
+                        print(error)
+                        
+                    }
+        }
+    }
+    //MARK: - Work with UI
+    private func setupNavigationBar(){
+        //Настраиваем кнопку назад
+        if let topItem = navigationController?.navigationBar.topItem{
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            topItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        }
+        //Название
+        title = "Статьи"
+    }
+    
     private func setUIWithInternetProblem(){
         let internetErrorLabel = UILabel()
         internetErrorLabel.text = """
@@ -109,20 +109,21 @@ class TextsViewController: UIViewController, UITableViewDelegate {
         """
         internetErrorLabel.numberOfLines = 0
         internetErrorLabel.sizeToFit()
-        internetErrorLabel.backgroundColor = .red
         
         let button = UIButton()
         button.setTitle("Попробовать еще раз", for: .normal)
         button.backgroundColor = .gray
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(self.pressedButton), for: .touchUpInside)
+        // Padding
+        button.contentEdgeInsets = UIEdgeInsets(top: 10,left: 7,bottom: 10,right: 7)
         
-
+        
         let stackView = UIStackView(arrangedSubviews: [internetErrorLabel, button])
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .fillProportionally
-        stackView.spacing = 10
+        stackView.spacing = 15
         stackView.tag = 525
         
         self.view.addSubview(stackView)
@@ -142,33 +143,6 @@ class TextsViewController: UIViewController, UITableViewDelegate {
                 self.fetchNews()
             }
         }
-    }
-    
-    //    private func fetchHtmlPage(){
-    //
-    //        let session = URLSession.shared
-    //        guard let url = URL(string: url) else { return }
-    //        session.dataTask(with: url) { (data, response, error) in
-    //            if let error = error {
-    //                print(error.localizedDescription)
-    //            }
-    //            if let response = response{
-    //                print(response)
-    //            }
-    //            if let data = data{
-    //                self.html = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
-    //                print(self.html)
-    //            }
-    //        }.resume()
-    //    }
-    private func setupNavigationBar(){
-        //Настраиваем кнопку назад
-        if let topItem = navigationController?.navigationBar.topItem{
-            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            topItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
-        }
-        //Название
-        title = "Статьи"
     }
     
     

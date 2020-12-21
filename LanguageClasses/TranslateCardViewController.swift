@@ -201,7 +201,7 @@ class TranslateCardViewController: UIViewController, UIGestureRecognizerDelegate
             let translations: [Translation]
         }
         let parameters: [String: Any] = [
-            "folder_id": "",
+            "folder_id": "b1g94rcriu3quvlk0icu",
             "texts": ["\(word!)"],
             "targetLanguageCode": "ru"
         ]
