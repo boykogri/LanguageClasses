@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37D7E7F425A4205B00464000 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E7F325A4205B00464000 /* VocabularyViewController.swift */; };
 		37D7E7F825A420B300464000 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E7F725A420B300464000 /* TextViewController.swift */; };
 		37D7E7FD25A420C700464000 /* TextsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E7FB25A420C600464000 /* TextsTableViewCell.swift */; };
 		37D7E7FE25A420C700464000 /* TextsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E7FC25A420C600464000 /* TextsViewController.swift */; };
@@ -27,15 +26,16 @@
 		37D7E81F25A420FA00464000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D7E81E25A420FA00464000 /* Main.storyboard */; };
 		37D7E82425A4211700464000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E82225A4211700464000 /* AppDelegate.swift */; };
 		37D7E82525A4211700464000 /* ExtentionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E82325A4211700464000 /* ExtentionUIView.swift */; };
-		3A02C4C9254D42F100BEA559 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A02C4C8254D42F100BEA559 /* RSSParser.swift */; };
-		3A238161248D4FCD00E229C5 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A238160248D4FCD00E229C5 /* EditCard.swift */; };
-		3A5E679F248B4F05003A0836 /* TranslateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E679E248B4F05003A0836 /* TranslateCardViewController.swift */; };
+		37D7E82925A4217A00464000 /* TranslateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E82825A4217A00464000 /* TranslateCardViewController.swift */; };
+		37D7E82F25A4219600464000 /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E82C25A4219500464000 /* EditCard.swift */; };
+		37D7E83025A4219600464000 /* VocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E82D25A4219600464000 /* VocabularyCell.swift */; };
+		37D7E83125A4219600464000 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E82E25A4219600464000 /* VocabularyViewController.swift */; };
+		37D7E83825A421BF00464000 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E83425A421BE00464000 /* RSSParser.swift */; };
+		37D7E83925A421BF00464000 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E83525A421BE00464000 /* Card.swift */; };
+		37D7E83A25A421BF00464000 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E83625A421BF00464000 /* Text.swift */; };
+		37D7E83B25A421BF00464000 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E83725A421BF00464000 /* Translations.swift */; };
 		3A5E67A1248B79D5003A0836 /* MainScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67A0248B79D5003A0836 /* MainScreenTableViewController.swift */; };
-		3A5E67A8248BDE81003A0836 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67A7248BDE81003A0836 /* Text.swift */; };
 		3A5E67AA248CB233003A0836 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67A9248CB233003A0836 /* StorageManager.swift */; };
-		3A5E67AC248CB4AD003A0836 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67AB248CB4AD003A0836 /* Card.swift */; };
-		3A5E67B1248CC0BE003A0836 /* VocabularyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E67B0248CC0BE003A0836 /* VocabularyCell.swift */; };
-		3A62D06D2578D27500850590 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62D06C2578D27500850590 /* Translations.swift */; };
 		3A75664525752C4D00C88941 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A75664425752C4D00C88941 /* Token.swift */; };
 		3A97A20624856DB700AD95E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97A20524856DB700AD95E0 /* SceneDelegate.swift */; };
 		3A97A20D24856DBA00AD95E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A97A20C24856DBA00AD95E0 /* Assets.xcassets */; };
@@ -45,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		217633F48B78F8F7FE64E837 /* Pods_LanguageClasses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LanguageClasses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		37D7E7F325A4205B00464000 /* VocabularyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
 		37D7E7F725A420B300464000 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		37D7E7FB25A420C600464000 /* TextsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsTableViewCell.swift; sourceTree = "<group>"; };
 		37D7E7FC25A420C600464000 /* TextsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsViewController.swift; sourceTree = "<group>"; };
@@ -65,21 +64,22 @@
 		37D7E81E25A420FA00464000 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		37D7E82225A4211700464000 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37D7E82325A4211700464000 /* ExtentionUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtentionUIView.swift; sourceTree = "<group>"; };
-		3A02C4C8254D42F100BEA559 /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
-		3A238160248D4FCD00E229C5 /* EditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
-		3A5E679E248B4F05003A0836 /* TranslateCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateCardViewController.swift; sourceTree = "<group>"; };
+		37D7E82825A4217A00464000 /* TranslateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslateCardViewController.swift; sourceTree = "<group>"; };
+		37D7E82C25A4219500464000 /* EditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
+		37D7E82D25A4219600464000 /* VocabularyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyCell.swift; sourceTree = "<group>"; };
+		37D7E82E25A4219600464000 /* VocabularyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
+		37D7E83425A421BE00464000 /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
+		37D7E83525A421BE00464000 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		37D7E83625A421BF00464000 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		37D7E83725A421BF00464000 /* Translations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		37D7E83D25A421D500464000 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A5E67A0248B79D5003A0836 /* MainScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenTableViewController.swift; sourceTree = "<group>"; };
-		3A5E67A7248BDE81003A0836 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		3A5E67A9248CB233003A0836 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		3A5E67AB248CB4AD003A0836 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		3A5E67B0248CC0BE003A0836 /* VocabularyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyCell.swift; sourceTree = "<group>"; };
-		3A62D06C2578D27500850590 /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
 		3A75664425752C4D00C88941 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		3A97A20024856DB700AD95E0 /* LanguageClasses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageClasses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A97A20524856DB700AD95E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A97A20C24856DBA00AD95E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A97A20F24856DBA00AD95E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3A97A21124856DBA00AD95E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		643508E8858E4F234525B6D4 /* Pods-LanguageClasses.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageClasses.release.xcconfig"; path = "Target Support Files/Pods-LanguageClasses/Pods-LanguageClasses.release.xcconfig"; sourceTree = "<group>"; };
 		F1CB2E2C3256481FB1C2002D /* Pods-LanguageClasses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageClasses.debug.xcconfig"; path = "Target Support Files/Pods-LanguageClasses/Pods-LanguageClasses.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,10 +144,10 @@
 		3A05A1132547DF5B00530FEF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A5E67AB248CB4AD003A0836 /* Card.swift */,
-				3A5E67A7248BDE81003A0836 /* Text.swift */,
-				3A02C4C8254D42F100BEA559 /* RSSParser.swift */,
-				3A62D06C2578D27500850590 /* Translations.swift */,
+				37D7E83525A421BE00464000 /* Card.swift */,
+				37D7E83425A421BE00464000 /* RSSParser.swift */,
+				37D7E83625A421BF00464000 /* Text.swift */,
+				37D7E83725A421BF00464000 /* Translations.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,9 +166,9 @@
 		3A5E67AF248CC08B003A0836 /* Vocabulary */ = {
 			isa = PBXGroup;
 			children = (
-				37D7E7F325A4205B00464000 /* VocabularyViewController.swift */,
-				3A5E67B0248CC0BE003A0836 /* VocabularyCell.swift */,
-				3A238160248D4FCD00E229C5 /* EditCard.swift */,
+				37D7E82C25A4219500464000 /* EditCard.swift */,
+				37D7E82D25A4219600464000 /* VocabularyCell.swift */,
+				37D7E82E25A4219600464000 /* VocabularyViewController.swift */,
 			);
 			path = Vocabulary;
 			sourceTree = "<group>";
@@ -204,9 +204,9 @@
 				3A97A20524856DB700AD95E0 /* SceneDelegate.swift */,
 				3A97A20C24856DBA00AD95E0 /* Assets.xcassets */,
 				3A97A20E24856DBA00AD95E0 /* LaunchScreen.storyboard */,
-				3A97A21124856DBA00AD95E0 /* Info.plist */,
-				3A5E679E248B4F05003A0836 /* TranslateCardViewController.swift */,
+				37D7E83D25A421D500464000 /* Info.plist */,
 				3A5E67A0248B79D5003A0836 /* MainScreenTableViewController.swift */,
+				37D7E82825A4217A00464000 /* TranslateCardViewController.swift */,
 				3A5E67A9248CB233003A0836 /* StorageManager.swift */,
 			);
 			path = LanguageClasses;
@@ -340,20 +340,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A5E67A8248BDE81003A0836 /* Text.swift in Sources */,
 				3A5E67AA248CB233003A0836 /* StorageManager.swift in Sources */,
-				3A02C4C9254D42F100BEA559 /* RSSParser.swift in Sources */,
+				37D7E82F25A4219600464000 /* EditCard.swift in Sources */,
+				37D7E82925A4217A00464000 /* TranslateCardViewController.swift in Sources */,
 				37D7E7FE25A420C700464000 /* TextsViewController.swift in Sources */,
 				3A75664525752C4D00C88941 /* Token.swift in Sources */,
+				37D7E83825A421BF00464000 /* RSSParser.swift in Sources */,
+				37D7E83025A4219600464000 /* VocabularyCell.swift in Sources */,
+				37D7E83925A421BF00464000 /* Card.swift in Sources */,
+				37D7E83125A4219600464000 /* VocabularyViewController.swift in Sources */,
 				3A5E67A1248B79D5003A0836 /* MainScreenTableViewController.swift in Sources */,
-				37D7E7F425A4205B00464000 /* VocabularyViewController.swift in Sources */,
-				3A5E679F248B4F05003A0836 /* TranslateCardViewController.swift in Sources */,
+				37D7E83B25A421BF00464000 /* Translations.swift in Sources */,
+				37D7E83A25A421BF00464000 /* Text.swift in Sources */,
 				37D7E82425A4211700464000 /* AppDelegate.swift in Sources */,
 				37D7E82525A4211700464000 /* ExtentionUIView.swift in Sources */,
-				3A62D06D2578D27500850590 /* Translations.swift in Sources */,
-				3A238161248D4FCD00E229C5 /* EditCard.swift in Sources */,
-				3A5E67B1248CC0BE003A0836 /* VocabularyCell.swift in Sources */,
-				3A5E67AC248CB4AD003A0836 /* Card.swift in Sources */,
 				37D7E7F825A420B300464000 /* TextViewController.swift in Sources */,
 				37D7E7FD25A420C700464000 /* TextsTableViewCell.swift in Sources */,
 				3A97A20624856DB700AD95E0 /* SceneDelegate.swift in Sources */,

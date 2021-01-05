@@ -82,7 +82,7 @@ class TranslateCardViewController: UIViewController, UIGestureRecognizerDelegate
             response in
             //debugPrint(response)
             switch response.result {
-            case .success(let success):
+            case .success(_):
 //                DispatchQueue.main.async {
 //                    self.translate = NSMutableAttributedString(string: "")
 //                }
@@ -201,7 +201,7 @@ class TranslateCardViewController: UIViewController, UIGestureRecognizerDelegate
             let translations: [Translation]
         }
         let parameters: [String: Any] = [
-            "folder_id": "b1g94rcriu3quvlk0icu",
+            "folder_id": "",
             "texts": ["\(word!)"],
             "targetLanguageCode": "ru"
         ]
@@ -221,8 +221,8 @@ class TranslateCardViewController: UIViewController, UIGestureRecognizerDelegate
             response in
             debugPrint(response)
             switch response.result {
-            case .success(let success):
-                print(response.value!.translations.first?.text)
+            case .success(_):
+                print(response.value!.translations.first?.text ?? "Error value")
             case .failure(let error):
                 print(error)
             }
