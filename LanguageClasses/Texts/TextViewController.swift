@@ -29,57 +29,36 @@ class TextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+   
         DispatchQueue.global(qos: .userInitiated).async {
             self.fetchBBC()
 
         }
-    
         setupNavigationBar()
         self.view.setActivityIndicator()
         self.view.activityStartAnimating()
-        
+    
 //       Распознователь нажатий
         let tap = UITapGestureRecognizer(target: self, action:#selector(tapResponse))
         //Устанавливаем наш класс делигатом распознователя нажатий
         tap.delegate = self
         textView.addGestureRecognizer(tap)
 
-    
-        
-        AF.request("https://developers.lingvolive.com/api/v1.1/authenticate", method: .post, parameters: nil, headers: head).validate().responseString { response in
-            switch response.result{
-            case .success(let s):
-                print("tokenABBYY = \(response.value!)")
-                TextViewController.token = response.value!
-            case .failure(let error):
-                print(error)
-            }
-            
-        }
+//        AF.request("https://developers.lingvolive.com/api/v1.1/authenticate", method: .post, parameters: nil, headers: head).validate().responseString { response in
+//            switch response.result{
+//            case .success(let s):
+//                print("tokenABBYY = \(response.value!)")
+//                TextViewController.token = response.value!
+//            case .failure(let error):
+//                print(error)
+//            }
+//
+//        }
         print("Yandex token = \(tokenYa!)")
         
     }
-//    override func loadView() {
-//
-//        self.view = webView
-//
-//        //webView.uiDelegate = self
-//
-//
-//
-//        //webView.scrollView.isScrollEnabled = false
-//        //self.view.addGestureRecognizer(tap)
-//        if let url = URL(string: newItem.link) {
-//            let request = URLRequest(url: url)
-//            //setConfiguration()
-//            webView.load(request)
-//
-//        }
-//
-//    }
+
+    //MARK: - Parse page
     private func fetchBBC(){
         guard let url = URL(string: newItem.link) else { return }
         print(url)
@@ -91,49 +70,43 @@ class TextViewController: UIViewController {
         do {
             let doc: Document = try SwiftSoup.parseBodyFragment(html)
 
-            let main = try doc.select("p, h1, h2, h3, img")
-            /// elements to remove, in this case images
+            let main = try doc.select("article p, article h1, article h2, article h3, article img")
+            // elements to remove, in this case images
 //            var undesiredElements: Elements? = try main.select("button")
 //            try undesiredElements?.remove()
 
-            var str = ""
-            var mutStr = NSMutableAttributedString(string: str)
+            var tempHtmlStr = ""
+            let mutStr = NSMutableAttributedString(string: "")
             for el in main {
+                //Если изображение
                 if el.tagName() == "img"{
                     let url = try el.attr("src")
                     
                     if let image = getImage(url) {
-                        print("Получили изображение")
-                        let s1 = getHtmlAttributedStr(string: str)
+                        let strBeforeImg = getHtmlAttributedStr(string: tempHtmlStr)
                         let imageAttachment = NSTextAttachment()
                         imageAttachment.image = image
                         DispatchQueue.main.async {
-                            let maxWidth = self.textView.bounds.size.width
-                            // FIXME: установить ширину, а не высоту
-                            imageAttachment.setImageHeight(height: 250, maxWidth: maxWidth)
+                            let maxWidth = self.view.bounds.size.width
+                            imageAttachment.setImageSIze(maxWidth: maxWidth)
                         }
-                        
-                        
-                        //imageAttachment.bounds = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-                        
-                        let s2 = NSAttributedString(attachment: imageAttachment)
-                        mutStr.append(s1)
-                        mutStr.append(s2)
-                        str = "<br><br>"
+                        let imgStr = NSAttributedString(attachment: imageAttachment)
+                        mutStr.append(strBeforeImg)
+                        mutStr.append(imgStr)
+                        tempHtmlStr = "<br>"
                     }
-                    
-                    
-                    
+                //Любой другой тег
                 }else {
-                    try el.append("<br><br>")
-                    str.append(try el.html())
+                    try el.append("<br>")
+                    tempHtmlStr.append(try el.html())
                 }
                 
             }
-            mutStr.append(getHtmlAttributedStr(string: str))
+            //String в Attributed string
+            mutStr.append(getHtmlAttributedStr(string: tempHtmlStr))
             DispatchQueue.main.async {
               
-                let atrStr = self.getHtmlAttributedStr(string: str)
+                //let atrStr = self.getHtmlAttributedStr(string: str)
                 self.view.activityStopAnimating()
                 self.textView.attributedText = mutStr
             }
@@ -143,26 +116,45 @@ class TextViewController: UIViewController {
             print("error")
         }
     }
+    
+    //MARK: - Text handling
     func getHtmlAttributedStr(string : String) -> NSAttributedString{
-        let data = string.data(using: .utf8)!
-        let att = try! NSAttributedString.init(
-            data: data, options: [.documentType: NSAttributedString.DocumentType.html],
-            documentAttributes: nil)
+        // Почему то проблема с  “ as â
+//        let data = string.data(using: .utf8)!
+//        let att = try? NSAttributedString.init(
+//            data: data1,
+//            options: [.documentType: NSAttributedString.DocumentType.html],
+//            documentAttributes: nil)
+        let data = Data(string.utf8)
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+
+        guard let att = try? NSAttributedString(data: data,
+                                            options: options,
+                                            documentAttributes: nil)
+        else {return NSAttributedString(string: "")}
         let matt = NSMutableAttributedString(attributedString:att)
         matt.enumerateAttribute(
             NSAttributedString.Key.font,
             in:NSMakeRange(0,matt.length),
             options:.longestEffectiveRangeNotRequired) { value, range, stop in
                 let f1 = value as! UIFont
-                let f2 = UIFont(name:"Georgia", size:20)!
+                guard let customFont = UIFont(name: "Roboto-Regular", size: 20) else {return}
                 //Объединяем все старые стили и новые
-                if let f3 = self.applyTraitsFromFont(f1, to:f2) {
+                if let f3 = self.applyTraitsFromFont(f1, to:customFont) {
                     matt.addAttribute(
                         NSAttributedString.Key.font, value:f3, range:range)
                 }
         }
+        let paragrah = NSMutableParagraphStyle()
+        paragrah.alignment = .left
+        paragrah.paragraphSpacing = 12
+        matt.addAttributes([.paragraphStyle: paragrah], range: NSMakeRange(0, matt.length))
         return matt
     }
+    
     func applyTraitsFromFont(_ f1: UIFont, to f2: UIFont) -> UIFont? {
         let t = f1.fontDescriptor.symbolicTraits
         if let fd = f2.fontDescriptor.withSymbolicTraits(t) {
@@ -170,33 +162,34 @@ class TextViewController: UIViewController {
         }
         return nil
     }
+    
+    
     func getImage(_ url: String) -> UIImage?{
-        
-        guard let url = URL(string: url) else { return nil}
-        var image: UIImage? = nil
         let group = DispatchGroup()
-        group.enter()
-
+        var image: UIImage? = nil
+        group.enter() // указываем, что блок вошел в группу для синхронизации потоков
         AF.request(url).response { (response) in
             //debugPrint(response)
+            
             switch response.result{
             case .success(let data):
                 if let img = UIImage(data: data!){
-                    //print("Распарсили изображение")
+                    print("Распарсили изображение")
                     image = img
-                    group.leave()
-                    //print("Image1 = \(image)")
+                    print("Image1 = \(image)")
                 }
             case .failure(let error):
                 debugPrint(response)
             }
-            
+            group.leave() // указывает, что блок закончил выполнение
         }
-        // wait ...
+        // Ожидаем, пока блок завершит работу
         group.wait()
-        //print("Image2 = \(image)")
+        
+        print("Image2 = \(image)")
         return image
     }
+
     func showImage(_ image: UIImage){
         DispatchQueue.main.async {
             let imgView = UIImageView(image: image)
@@ -261,6 +254,7 @@ class TextViewController: UIViewController {
         
         
     }
+    
     private func problemWithParcing(){
         
         DispatchQueue.main.async {
@@ -278,6 +272,8 @@ class TextViewController: UIViewController {
         }
         //Название
         title = newItem.title
+        //Padding
+        textView.textContainerInset = UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
     }
     
 
@@ -330,15 +326,45 @@ extension TextViewController: UIGestureRecognizerDelegate{
         
     }
 }
-//MARK: - NSTextAttachment
-extension NSTextAttachment {
-    func setImageHeight(height: CGFloat, maxWidth: CGFloat) {
-        guard let image = image else { return }
-        //let ratio = image.size.width / image.size.height
-        let ratioWidth = maxWidth / image.size.width
+//MARK: - Work with Images
 
-        bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: ratioWidth * image.size.width, height: height)
+func getImage(_ url: String) -> UIImage?{
+    
+    guard let url = URL(string: url) else { return nil}
+    var image: UIImage? = nil
+    let group = DispatchGroup()
+    group.enter()
+
+    AF.request(url).response { (response) in
+        //debugPrint(response)
+        switch response.result{
+        case .success(let data):
+            if let img = UIImage(data: data!){
+                //print("Распарсили изображение")
+                image = img
+                group.leave()
+                print("Image1 = \(image)")
+            }
+        case .failure(let error):
+            debugPrint(response)
+            print("Error = \(error)")
+        }
+        
     }
+    // wait ...
+    group.wait()
+    print("Image2 = \(image)")
+    return image
+}
+
+extension NSTextAttachment {
+    func setImageSIze(maxWidth: CGFloat) {
+        guard let image = image else { return }
+        let ratio = maxWidth/image.size.width
+        let height = ratio * image.size.height
+        bounds = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: maxWidth, height: height)
+    }
+
 }
 //MARK: - NSMutableAttributedString
 extension NSMutableAttributedString {
