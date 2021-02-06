@@ -14,10 +14,13 @@ class TextsViewController: UIViewController, UITableViewDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentalControl: UISegmentedControl!
+    @IBOutlet weak var scrollView: UIScrollView!
     var texts: Results<Text>!
     
     var items = [RSSItem]()
-    let url = "http://feeds.bbci.co.uk/news/technology/rss.xml"
+    var url = "http://feeds.bbci.co.uk/news/rss.xml"
+    
     let parameters: [String: String] = [
         "yandexPassportOauthToken": ""
     ]
@@ -25,50 +28,76 @@ class TextsViewController: UIViewController, UITableViewDelegate {
     var html: NSAttributedString!
     override func viewDidLoad() {
         super.viewDidLoad()
+   
+        
         setupNavigationBar()
+        
+        segmentalControl.addTarget(self, action: #selector(changedSource), for: .valueChanged)
         //Получаем все тексты
         texts = realm.objects(Text.self)
+        
         self.view.setActivityIndicator()
         self.view.activityStartAnimating()
         
+        self.fetchNews()
         DispatchQueue.global().async {
-            self.fetchNews()
             self.getToken()
         }
-        
-        
+    
         //Убираем полоски внизу
         tableView.tableFooterView = UIView()
-        
-
-        
     }
     
+    @objc func changedSource(){
+        switch segmentalControl.titleForSegment(at: segmentalControl.selectedSegmentIndex)! {
+        case "Popular":
+            url = "http://feeds.bbci.co.uk/news/rss.xml"
+        case "Technology":
+            url = "http://feeds.bbci.co.uk/news/technology/rss.xml"
+        case "Entertainment & Arts":
+            url = "http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"
+        case "World":
+            url = "http://feeds.bbci.co.uk/news/world/rss.xml"
+        case "Sport":
+            url = "http://feeds.bbci.co.uk/sport/rss.xml"
+        default:
+            return
+        }
+
+        self.fetchNews()
+    }
     
     //MARK: - Work with Internet
     private func fetchNews(){
-        
-        let rssParser = RSSParser()
-        if let url = URL(string: url){
-            rssParser.startParsingWithContentsOfURL(rssUrl: url) {(isSuccessful) in
-                if isSuccessful {
-                    print("Успешно распарсили")
-                    items = rssParser.rssItems
-                    DispatchQueue.main.async {
-                        self.view.activityStopAnimating()
-                        self.tableView.reloadData()
+        print("Загрузка новостей")
+        items = []
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        self.view.activityStartAnimating()
+        DispatchQueue.global().async {
+            let rssParser = RSSParser()
+            if let url = URL(string: self.url){
+                rssParser.startParsingWithContentsOfURL(rssUrl: url) {(isSuccessful) in
+                    if isSuccessful {
+                        print("Успешно распарсили")
+                        self.items = rssParser.rssItems
+                        DispatchQueue.main.async {
+                            self.view.activityStopAnimating()
+                            self.tableView.reloadData()
+                        }
+                    }else {
+                        
+                        DispatchQueue.main.async {
+                            self.view.activityStopAnimating()
+                            self.setUIWithInternetProblem()
+                        }
+                        print("Не удалось распарсить")
                     }
-                }else {
                     
-                    DispatchQueue.main.async {
-                        self.view.activityStopAnimating()
-                        self.setUIWithInternetProblem()
-                    }
-                    print("Не удалось распарсить")
                 }
                 
             }
-            
         }
         
     }
@@ -98,7 +127,13 @@ class TextsViewController: UIViewController, UITableViewDelegate {
             topItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         }
         //Название
-        title = "Статьи"
+        title = "Новости"
+        setupCells()
+    }
+    
+    private func setupCells(){
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 52
     }
     
     private func setUIWithInternetProblem(){

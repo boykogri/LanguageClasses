@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373EB07C25ADBBFF000EDA43 /* ScrollableSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EB07B25ADBBFF000EDA43 /* ScrollableSegmentedControl.swift */; };
 		37D7E7F825A420B300464000 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E7F725A420B300464000 /* TextViewController.swift */; };
 		37D7E7FD25A420C700464000 /* TextsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E7FB25A420C600464000 /* TextsTableViewCell.swift */; };
 		37D7E7FE25A420C700464000 /* TextsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7E7FC25A420C600464000 /* TextsViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		217633F48B78F8F7FE64E837 /* Pods_LanguageClasses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LanguageClasses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		373EB07B25ADBBFF000EDA43 /* ScrollableSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableSegmentedControl.swift; sourceTree = "<group>"; };
 		37D7E7F725A420B300464000 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		37D7E7FB25A420C600464000 /* TextsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsTableViewCell.swift; sourceTree = "<group>"; };
 		37D7E7FC25A420C600464000 /* TextsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				37D7E7FB25A420C600464000 /* TextsTableViewCell.swift */,
 				37D7E7FC25A420C600464000 /* TextsViewController.swift */,
 				3A75664425752C4D00C88941 /* Token.swift */,
+				373EB07B25ADBBFF000EDA43 /* ScrollableSegmentedControl.swift */,
 			);
 			path = Texts;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				3A5E67A1248B79D5003A0836 /* MainScreenTableViewController.swift in Sources */,
 				37D7E83B25A421BF00464000 /* Translations.swift in Sources */,
 				37D7E83A25A421BF00464000 /* Text.swift in Sources */,
+				373EB07C25ADBBFF000EDA43 /* ScrollableSegmentedControl.swift in Sources */,
 				37D7E82425A4211700464000 /* AppDelegate.swift in Sources */,
 				37D7E82525A4211700464000 /* ExtentionUIView.swift in Sources */,
 				37D7E7F825A420B300464000 /* TextViewController.swift in Sources */,

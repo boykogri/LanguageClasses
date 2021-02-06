@@ -13,7 +13,6 @@ struct RSSItem {
     var description: String
     var link: String
     var pubDate: String
-
 }
 
 class RSSParser: NSObject, XMLParserDelegate {
